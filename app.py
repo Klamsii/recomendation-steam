@@ -1,4 +1,5 @@
 import os
+import json
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
 import requests
@@ -178,15 +179,9 @@ def get_recommendations(games):
 
     favorite_genres = list(set(favorite_genres))
 
-    popular_games = [
-        {"appid": 730, "name": "Counter-Strike 2", "genres": ["Action", "FPS"]},
-        {"appid": 570, "name": "Dota 2", "genres": ["MOBA", "Strategy"]},
-        {"appid": 578080, "name": "PUBG: BATTLEGROUNDS", "genres": ["Shooter", "Battle Royale"]},
-        {"appid": 1172470, "name": "Apex Legends", "genres": ["Shooter", "Battle Royale"]},
-        {"appid": 271590, "name": "Grand Theft Auto V", "genres": ["Open World", "Action"]},
-        {"appid": 292030, "name": "The Witcher 3: Wild Hunt", "genres": ["RPG", "Open World"]},
-        {"appid": 1086940, "name": "Baldur's Gate 3", "genres": ["RPG"]},
-    ]
+    with open("games.json", "r", encoding="utf-8") as file:
+        popular_games = json.load(file)
+    
 
     owned_ids = [game["appid"] for game in games]
     recommendations = []
