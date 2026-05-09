@@ -1,7 +1,7 @@
 import os
 import json
 from dotenv import load_dotenv
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 from datetime import datetime
 
@@ -151,8 +151,8 @@ def get_game_details(appid):
             return None
 
         data = response[str(appid)]["data"]
-        genres = []
 
+        genres = []
         if "genres" in data:
             genres = [genre["description"] for genre in data["genres"]]
 
@@ -162,6 +162,65 @@ def get_game_details(appid):
 
     except Exception as e:
         print("GetGameDetails error:", e)
+        return None
+
+
+def get_game_details_full(appid):
+    url = f"https://store.steampowered.com/api/appdetails?appids={appid}&l=english"
+
+    try:
+        response = requests.get(url, timeout=20).json()
+
+        if str(appid) not in response:
+            return None
+
+        if not response[str(appid)]["success"]:
+            return None
+
+        data = response[str(appid)]["data"]
+
+        genres = []
+        if "genres" in data:
+            genres = [
+                genre["description"]
+                for genre in data["genres"]
+            ]
+
+        developers = data.get("developers", [])
+        publishers = data.get("publishers", [])
+
+        screenshots = []
+        if "screenshots" in data:
+            screenshots = [
+                screenshot["path_full"]
+                for screenshot in data["screenshots"][:5]
+            ]
+
+        metacritic_score = None
+        if "metacritic" in data:
+            metacritic_score = data["metacritic"].get("score")
+
+        price = "Free"
+        if "price_overview" in data:
+            price = data["price_overview"].get("final_formatted", "Unknown")
+
+        return {
+            "appid": appid,
+            "name": data.get("name", "Unknown"),
+            "header_image": data.get("header_image"),
+            "short_description": data.get("short_description", ""),
+            "genres": genres,
+            "developers": developers,
+            "publishers": publishers,
+            "release_date": data.get("release_date", {}).get("date", "Unknown"),
+            "metacritic_score": metacritic_score,
+            "price": price,
+            "website": data.get("website"),
+            "screenshots": screenshots
+        }
+
+    except Exception as e:
+        print("GetGameDetailsFull error:", e)
         return None
 
 
@@ -181,7 +240,6 @@ def get_recommendations(games):
 
     with open("games.json", "r", encoding="utf-8") as file:
         popular_games = json.load(file)
-    
 
     owned_ids = [game["appid"] for game in games]
     recommendations = []
@@ -194,10 +252,25 @@ def get_recommendations(games):
             recommendations.append({
                 "appid": game["appid"],
                 "name": game["name"],
-                "reason": f"Matches your favorite genres: {', '.join(game['genres'])}"
+                "reason": (
+                    f"Matches your favorite genres: "
+                    f"{', '.join(game['genres'])}"
+                )
             })
 
     return recommendations[:6]
+
+
+@app.route("/game/<int:appid>")
+def game_details_api(appid):
+    details = get_game_details_full(appid)
+
+    if not details:
+        return jsonify({
+            "error": "Game details not found."
+        }), 404
+
+    return jsonify(details)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -245,7 +318,8 @@ def index():
             if games is None:
                 error = (
                     "Your Steam profile or Game Details are private. "
-                    "Please set both 'My Profile' and 'Game Details' to Public."
+                    "Please set both 'My Profile' and "
+                    "'Game Details' to Public."
                 )
                 return render_template("index.html", error=error)
 
@@ -255,7 +329,8 @@ def index():
             print("ERROR:", e)
             error = (
                 "Unable to load your Steam data. "
-                "Make sure your Steam ID is correct and your profile is public."
+                "Make sure your Steam ID is correct "
+                "and your profile is public."
             )
 
     return render_template(
