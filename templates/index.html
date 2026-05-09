@@ -194,11 +194,12 @@
         }
     </style>
 </head>
+
 <body>
 <div class="container">
 
     <div class="hero">
-        <h1>🎮 Steam Game Recommender</h1>
+        <h1>Steam Game Recommender</h1>
         <p>Analyze your Steam profile and discover new games you'll love.</p>
 
         <form method="POST" class="search-form">
@@ -230,7 +231,7 @@
         </div>
     </div>
 
-    <h2 class="section-title">📚 Your Steam Library</h2>
+    <h2 class="section-title">Your Steam Library</h2>
 
     <div class="controls">
         <select id="sortSelect" onchange="sortGames()">
@@ -246,6 +247,9 @@
             class="game-card"
             data-name="{{ game.name|lower }}"
             data-hours="{{ game.hours }}"
+            onclick="openGameDetails({{ game.appid }})"
+            style="cursor: pointer;"
+            title="Click to view detailed information"
         >
             <img
                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/{{ game.appid }}/header.jpg"
@@ -265,11 +269,17 @@
 
     
     <div class="recommendations">
-        <h2 class="section-title">🤖 Recommended Games</h2>
+        <h2 class="section-title">Recommended Games</h2>
 
         <div class="games-grid">
             {% for game in recommendations %}
-            <div class="game-card">
+            <div
+                class="game-card"
+                data-appid="{{ game.appid }}"
+                onclick="openGameDetails(parseInt(this.dataset.appid))"
+                style="cursor: pointer;"
+                title="Click to view detailed information"
+            >
                 <img
                     src="https://cdn.cloudflare.steamstatic.com/steam/apps/{{ game.appid }}/header.jpg"
                     alt="{{ game.name }}"
@@ -284,19 +294,20 @@
                     {% else %}
                     <p>Recommended based on your favorite genres and playtime.</p>
                     {% endif %}
+
+                    <p style="margin-top: 10px; color: #66c0f4; font-weight: bold;">
+                        Click to view details
+                    </p>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
 
-    {% endif %}
 
-
-    <!-- Блок ошибок (например, если профиль закрыт) -->
     {% if error %}
     <div class="error">
-        <h3>⚠️ Unable to Access Your Steam Profile</h3>
+        <h3>Unable to Access Your Steam Profile</h3>
         <p>{{ error }}</p>
 
         <p>
@@ -311,7 +322,7 @@
                 target="_blank"
                 style="color: #66c0f4; font-weight: bold;"
             >
-                🔓 Open Steam Privacy Settings
+                Open Steam Privacy Settings
             </a>
         </p>
 
@@ -325,6 +336,55 @@
         </ul>
     </div>
     {% endif %}
+</div>
+{% endif %}
+<div
+    id="gameModal"
+    style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 40px 20px;
+    "
+>
+    <div
+        style="
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #1b2838;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            color: white;
+        "
+    >
+        <button
+            onclick="closeGameDetails()"
+            style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: #66c0f4;
+                border: none;
+                color: #171a21;
+                font-size: 24px;
+                font-weight: bold;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+            "
+        >
+            ×
+        </button>
+
+        <div id="gameModalContent">
+            <p style="text-align: center;">Loading...</p>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -356,6 +416,122 @@ function sortGames() {
 
     cards.forEach(card => grid.appendChild(card));
 }
+
+async function openGameDetails(appid) {
+    const modal = document.getElementById('gameModal');
+    const content = document.getElementById('gameModalContent');
+
+    modal.style.display = 'block';
+    content.innerHTML = '<p style="text-align:center;">Loading...</p>';
+
+    try {
+        const response = await fetch(`/game/${appid}`);
+        const game = await response.json();
+
+        if (game.error) {
+            content.innerHTML = `<p>${game.error}</p>`;
+            return;
+        }
+
+        let screenshotsHtml = '';
+
+        if (game.screenshots && game.screenshots.length > 0) {
+            let images = '';
+
+            game.screenshots.forEach(function(src) {
+                images += `
+                    <img
+                        src="${src}"
+                        style="width:100%; border-radius:10px;"
+                    >
+                `;
+            });
+
+            screenshotsHtml = `
+                <h3 style="color:#66c0f4; margin-top:30px;">Screenshots</h3>
+                <div style="
+                    display:grid;
+                    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+                    gap:15px;
+                    margin-top:15px;
+                ">
+                    ${images}
+                </div>
+            `;
+    }
+
+        content.innerHTML = `
+            <img
+                src="${game.header_image}"
+                style="
+                    width:100%;
+                    border-radius:15px;
+                    margin-bottom:20px;
+                "
+            >
+
+            <h1 style="color:#66c0f4;">${game.name}</h1>
+
+            <p style="
+                line-height:1.6;
+                color:#c7d5e0;
+                margin-top:15px;
+            ">
+                ${game.short_description || 'No description available.'}
+            </p>
+
+            <div style="margin-top:25px; line-height:1.8;">
+                <p><strong>Genres:</strong> ${game.genres?.join(', ') || 'Unknown'}</p>
+                <p><strong>Developers:</strong> ${game.developers?.join(', ') || 'Unknown'}</p>
+                <p><strong>Publishers:</strong> ${game.publishers?.join(', ') || 'Unknown'}</p>
+                <p><strong>Release Date:</strong> ${game.release_date || 'Unknown'}</p>
+                <p><strong>Price:</strong> ${game.price || 'Unknown'}</p>
+                <p><strong>Metacritic:</strong> ${game.metacritic_score || 'N/A'}</p>
+            </div>
+
+            ${game.website ? `
+                <p style="margin-top:20px;">
+                    <a
+                        href="${game.website}"
+                        target="_blank"
+                        style="
+                            color:#66c0f4;
+                            font-weight:bold;
+                        "
+                    >
+                        Visit Official Website
+                    </a>
+                </p>
+            ` : ''}
+
+            ${screenshotsHtml}
+        `;
+    } catch (error) {
+        content.innerHTML = `
+            <p>
+                Failed to load game details.
+            </p>
+        `;
+    }
+}
+
+function closeGameDetails() {
+    document.getElementById('gameModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('gameModal');
+
+    if (event.target === modal) {
+        closeGameDetails();
+    }
+};
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeGameDetails();
+    }
+});
 </script>
 </body>
 </html>
