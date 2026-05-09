@@ -260,6 +260,49 @@ def get_recommendations(games):
 
     return recommendations[:6]
 
+def get_top_genres(games):
+    genre_hours = {}
+
+    for game in games[:50]:  # анализируем первые 50 игр
+        details = get_game_details(game["appid"])
+
+        if not details:
+            continue
+
+        for genre in details["genres"]:
+            if genre not in genre_hours:
+                genre_hours[genre] = 0
+
+            genre_hours[genre] += game["hours"]
+
+    # сортировка по количеству часов
+    sorted_genres = sorted(
+        genre_hours.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    # берём топ-5 жанров
+    top_genres = sorted_genres[:5]
+
+    return {
+        "labels": [genre for genre, _ in top_genres],
+        "values": [round(hours, 1) for _, hours in top_genres]
+    }
+def get_game_statistics(games):
+    top_hours = sorted(games, key=lambda g: g["hours"], reverse=True)[:5]
+    top_recent = sorted(
+        [g for g in games if g["recent_hours"] > 0],
+        key=lambda g: g["recent_hours"],
+        reverse=True
+    )[:5]
+
+    return {
+        "hours_labels": [g["name"] for g in top_hours],
+        "hours_values": [g["hours"] for g in top_hours],
+        "recent_labels": [g["name"] for g in top_recent],
+        "recent_values": [g["recent_hours"] for g in top_recent]
+    }
 
 @app.route("/game/<int:appid>")
 def game_details_api(appid):
@@ -275,6 +318,8 @@ def game_details_api(appid):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    game_stats = None
+    genre_stats = None
     profile = None
     games = []
     recommendations = []
@@ -324,6 +369,8 @@ def index():
                 return render_template("index.html", error=error)
 
             recommendations = get_recommendations(games)
+            genre_stats = get_top_genres(games)
+            game_stats = get_game_statistics(games)
 
         except Exception as e:
             print("ERROR:", e)
@@ -335,9 +382,11 @@ def index():
 
     return render_template(
         "index.html",
+        game_stats=game_stats,
         profile=profile,
         games=games,
         recommendations=recommendations,
+        genre_stats=genre_stats,
         error=error
     )
 
