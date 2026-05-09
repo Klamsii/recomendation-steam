@@ -1,0 +1,37 @@
+[
+    {
+        "appid": 730,
+        "name": "Counter-Strike 2",
+        "genres": ["Action", "FPS"]
+    },
+    {
+        "appid": 570,
+        "name": "Dota 2",
+        "genres": ["MOBA", "Strategy"]
+    },
+    {
+        "appid": 578080,
+        "name": "PUBG: BATTLEGROUNDS",
+        "genres": ["Shooter", "Battle Royale"]
+    },
+    {
+        "appid": 1172470,
+        "name": "Apex Legends",
+        "genres": ["Shooter", "Battle Royale"]
+    },
+    {
+        "appid": 271590,
+        "name": "Grand Theft Auto V",
+        "genres": ["Open World", "Action"]
+    },
+    {
+        "appid": 292030,
+        "name": "The Witcher 3: Wild Hunt",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 1086940,
+        "name": "Baldur's Gate 3",
+        "genres": ["RPG"]
+    }
+]
