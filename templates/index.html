@@ -247,7 +247,8 @@
             class="game-card"
             data-name="{{ game.name|lower }}"
             data-hours="{{ game.hours }}"
-            onclick="openGameDetails({{ game.appid }})"
+            data-appid="{{ game.appid }}"
+            onclick="openGameDetails(parseInt(this.dataset.appid))"
             style="cursor: pointer;"
             title="Click to view detailed information"
         >
