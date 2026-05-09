@@ -32,6 +32,1271 @@
     {
         "appid": 1086940,
         "name": "Baldur's Gate 3",
-        "genres": ["RPG"]
+        "genres": ["RPG", "Turn-Based Strategy"]
+    },
+    {
+        "appid": 1091500,
+        "name": "Cyberpunk 2077",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 1245620,
+        "name": "ELDEN RING",
+        "genres": ["RPG", "Action"]
+    },
+    {
+        "appid": 381210,
+        "name": "Dead by Daylight",
+        "genres": ["Horror", "Multiplayer"]
+    },
+    {
+        "appid": 1593500,
+        "name": "God of War",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 990080,
+        "name": "Hogwarts Legacy",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 413150,
+        "name": "Stardew Valley",
+        "genres": ["Simulation", "RPG"]
+    },
+    {
+        "appid": 367520,
+        "name": "Hollow Knight",
+        "genres": ["Metroidvania", "Action"]
+    },
+    {
+        "appid": 632360,
+        "name": "Risk of Rain 2",
+        "genres": ["Roguelike", "Action"]
+    },
+    {
+        "appid": 252490,
+        "name": "Rust",
+        "genres": ["Survival", "Multiplayer"]
+    },
+    {
+        "appid": 440,
+        "name": "Team Fortress 2",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 945360,
+        "name": "Among Us",
+        "genres": ["Party", "Multiplayer"]
+    },
+    {
+        "appid": 553850,
+        "name": "HELLDIVERS 2",
+        "genres": ["Co-op", "Action"]
+    },
+    {
+        "appid": 1938090,
+        "name": "Call of Duty®",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 4000,
+        "name": "Garry's Mod",
+        "genres": ["Sandbox", "Simulation"]
+    },
+    {
+        "appid": 582010,
+        "name": "Monster Hunter: World",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 739630,
+        "name": "Phasmophobia",
+        "genres": ["Horror", "Co-op"]
+    },
+    {
+        "appid": 1222670,
+        "name": "The Sims 4",
+        "genres": ["Simulation", "Life Sim"]
+    },
+    {
+        "appid": 359550,
+        "name": "Tom Clancy's Rainbow Six Siege",
+        "genres": ["FPS", "Tactical"]
+    },
+    {
+        "appid": 582660,
+        "name": "Black Desert",
+        "genres": ["MMORPG", "Open World"]
+    },
+    {
+        "appid": 892970,
+        "name": "Valheim",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 1174180,
+        "name": "Red Dead Redemption 2",
+        "genres": ["Open World", "Action"]
+    },
+    {
+        "appid": 1145360,
+        "name": "Hades",
+        "genres": ["Roguelike", "Action"]
+    },
+    {
+        "appid": 646570,
+        "name": "Slay the Spire",
+        "genres": ["Card Game", "Roguelike"]
+    },
+    {
+        "appid": 431960,
+        "name": "Wallpaper Engine",
+        "genres": ["Utility", "Customization"]
+    },
+    {
+        "appid": 431730,
+        "name": "A Hat in Time",
+        "genres": ["Platformer", "Adventure"]
+    },
+    {
+        "appid": 883710,
+        "name": "Resident Evil 2",
+        "genres": ["Horror", "Action"]
+    },
+    {
+        "appid": 374320,
+        "name": "DARK SOULS III",
+        "genres": ["RPG", "Action"]
+    },
+    {
+        "appid": 814380,
+        "name": "SEKIRO: SHADOWS DIE TWICE",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 1172620,
+        "name": "Sea of Thieves",
+        "genres": ["Adventure", "Multiplayer"]
+    },
+    {
+        "appid": 648800,
+        "name": "Raft",
+        "genres": ["Survival", "Co-op"]
+    },
+    {
+        "appid": 105600,
+        "name": "Terraria",
+        "genres": ["Sandbox", "Adventure"]
+    },
+    {
+        "appid": 346110,
+        "name": "ARK: Survival Evolved",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 322330,
+        "name": "Don't Starve Together",
+        "genres": ["Survival", "Co-op"]
+    },
+    {
+        "appid": 49520,
+        "name": "Borderlands 2",
+        "genres": ["FPS", "RPG"]
+    },
+    {
+        "appid": 489830,
+        "name": "The Elder Scrolls V: Skyrim Special Edition",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 236390,
+        "name": "War Thunder",
+        "genres": ["Simulation", "Action"]
+    },
+    {
+        "appid": 394360,
+        "name": "Hearts of Iron IV",
+        "genres": ["Strategy", "Grand Strategy"]
+    },
+    {
+        "appid": 281990,
+        "name": "Stellaris",
+        "genres": ["Strategy", "Sci-Fi"]
+    },
+    {
+        "appid": 236850,
+        "name": "Europa Universalis IV",
+        "genres": ["Strategy", "Grand Strategy"]
+    },
+    {
+        "appid": 1063730,
+        "name": "New World",
+        "genres": ["MMORPG", "Open World"]
+    },
+    {
+        "appid": 552990,
+        "name": "World of Warships",
+        "genres": ["Action", "Naval Combat"]
+    },
+    {
+        "appid": 1085660,
+        "name": "Destiny 2",
+        "genres": ["FPS", "MMO"]
+    },
+    {
+        "appid": 218620,
+        "name": "PAYDAY 2",
+        "genres": ["Co-op", "Action"]
+    },
+    {
+        "appid": 1172380,
+        "name": "Star Wars Jedi: Fallen Order",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 782330,
+        "name": "DOOM Eternal",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 620,
+        "name": "Portal 2",
+        "genres": ["Puzzle", "Co-op"]
+    },
+    {
+        "appid": 220,
+        "name": "Half-Life 2",
+        "genres": ["FPS", "Sci-Fi"]
+    },
+    {
+        "appid": 108600,
+        "name": "Project Zomboid",
+        "genres": ["Survival", "Zombie"]
+    },
+    {
+        "appid": 427520,
+        "name": "Factorio",
+        "genres": ["Automation", "Strategy"]
+    },
+    {
+        "appid": 1151640,
+        "name": "Horizon Zero Dawn Complete Edition",
+        "genres": ["Open World", "RPG"]
+    },
+    {
+        "appid": 1888930,
+        "name": "The Last of Us Part I",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 1151340,
+        "name": "Ghost of Tsushima DIRECTOR'S CUT",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 1623730,
+        "name": "Palworld",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 1675200,
+        "name": "EA SPORTS FC 24",
+        "genres": ["Sports", "Football"]
+    },
+    {
+        "appid": 1716740,
+        "name": "Starfield",
+        "genres": ["RPG", "Space"]
+    },
+    {
+        "appid": 1084600,
+        "name": "My Summer Car",
+        "genres": ["Simulation", "Driving"]
+    },
+    {
+        "appid": 2399830,
+        "name": "ARMA Reforger",
+        "genres": ["Military", "Simulation"]
+    },
+    {
+        "appid": 495420,
+        "name": "State of Decay 2",
+        "genres": ["Survival", "Zombie"]
+    },
+    {
+        "appid": 250900,
+        "name": "The Binding of Isaac: Rebirth",
+        "genres": ["Roguelike", "Action"]
+    },
+    {
+        "appid": 291550,
+        "name": "Brawlhalla",
+        "genres": ["Fighting", "Free to Play"]
+    },
+    {
+        "appid": 444090,
+        "name": "Paladins",
+        "genres": ["Hero Shooter", "Action"]
+    },
+    {
+        "appid": 304930,
+        "name": "Unturned",
+        "genres": ["Survival", "Zombie"]
+    },
+    {
+        "appid": 418370,
+        "name": "Resident Evil 7 Biohazard",
+        "genres": ["Horror", "Action"]
+    },
+    {
+        "appid": 1172470,
+        "name": "Marvel Rivals",
+        "genres": ["Hero Shooter", "Multiplayer"]
+    },
+    {
+        "appid": 287700,
+        "name": "METAL GEAR SOLID V: The Phantom Pain",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 524220,
+        "name": "NieR:Automata",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 601150,
+        "name": "Devil May Cry 5",
+        "genres": ["Hack and Slash", "Action"]
+    },
+    {
+        "appid": 2050650,
+        "name": "Resident Evil 4",
+        "genres": ["Horror", "Action"]
+    },
+    {
+        "appid": 2357570,
+        "name": "Overwatch 2",
+        "genres": ["Hero Shooter", "FPS"]
+    },
+    {
+        "appid": 1222140,
+        "name": "Detroit: Become Human",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 1817070,
+        "name": "Marvel's Spider-Man Remastered",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 1817190,
+        "name": "Marvel's Spider-Man: Miles Morales",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 814380,
+        "name": "Lies of P",
+        "genres": ["Action", "Souls-like"]
+    },
+    {
+        "appid": 255710,
+        "name": "Cities: Skylines",
+        "genres": ["City Builder", "Simulation"]
+    },
+    {
+        "appid": 8930,
+        "name": "Sid Meier's Civilization V",
+        "genres": ["Strategy", "Turn-Based"]
+    },
+    {
+        "appid": 289070,
+        "name": "Sid Meier's Civilization VI",
+        "genres": ["Strategy", "Turn-Based"]
+    },
+    {
+        "appid": 72850,
+        "name": "The Elder Scrolls V: Skyrim",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 239140,
+        "name": "Dying Light",
+        "genres": ["Action", "Parkour"]
+    },
+    {
+        "appid": 534380,
+        "name": "Dying Light 2 Stay Human",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 244210,
+        "name": "Assetto Corsa",
+        "genres": ["Racing", "Simulation"]
+    },
+    {
+        "appid": 431600,
+        "name": "Automobilista",
+        "genres": ["Racing", "Simulation"]
+    },
+    {
+        "appid": 227300,
+        "name": "Euro Truck Simulator 2",
+        "genres": ["Driving", "Simulation"]
+    },
+    {
+        "appid": 270880,
+        "name": "American Truck Simulator",
+        "genres": ["Driving", "Simulation"]
+    },
+    {
+        "appid": 620980,
+        "name": "Beat Saber",
+        "genres": ["Rhythm", "VR"]
+    },
+    {
+        "appid": 504230,
+        "name": "Celeste",
+        "genres": ["Platformer", "Indie"]
+    },
+    {
+        "appid": 977950,
+        "name": "A Dance of Fire and Ice",
+        "genres": ["Rhythm", "Music"]
+    },
+    {
+        "appid": 262060,
+        "name": "Darkest Dungeon",
+        "genres": ["RPG", "Turn-Based"]
+    },
+    {
+        "appid": 2552430,
+        "name": "The Axis Unseen",
+        "genres": ["Horror", "Open World"]
+    },
+    {
+        "appid": 815370,
+        "name": "Green Hell",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 457140,
+        "name": "Oxygen Not Included",
+        "genres": ["Simulation", "Strategy"]
+    },
+    {
+        "appid": 294100,
+        "name": "RimWorld",
+        "genres": ["Simulation", "Strategy"]
+    },
+    {
+        "appid": 268500,
+        "name": "XCOM 2",
+        "genres": ["Strategy", "Turn-Based"]
+    },
+    {
+        "appid": 431240,
+        "name": "Golf With Your Friends",
+        "genres": ["Sports", "Multiplayer"]
+    },
+    {
+        "appid": 284160,
+        "name": "BeamNG.drive",
+        "genres": ["Driving", "Simulation"]
+    },
+    {
+        "appid": 2368500,
+        "name": "Satisfactory",
+        "genres": ["Automation", "Open World"]
+    },
+    {
+        "appid": 526870,
+        "name": "Satisfactory",
+        "genres": ["Automation", "Open World"]
+    },
+    {
+        "appid": 960090,
+        "name": "Bloons TD 6",
+        "genres": ["Tower Defense", "Strategy"]
+    },
+    {
+        "appid": 365450,
+        "name": "Hacknet",
+        "genres": ["Simulation", "Hacking"]
+    },
+    {
+        "appid": 552520,
+        "name": "Far Cry 5",
+        "genres": ["FPS", "Open World"]
+    },
+    {
+        "appid": 939960,
+        "name": "Far Cry New Dawn",
+        "genres": ["FPS", "Open World"]
+    },
+    {
+        "appid": 611670,
+        "name": "The Escapists 2",
+        "genres": ["Strategy", "Simulation"]
+    },
+    {
+        "appid": 275850,
+        "name": "No Man's Sky",
+        "genres": ["Space", "Open World"]
+    },
+    {
+        "appid": 251570,
+        "name": "7 Days to Die",
+        "genres": ["Survival", "Zombie"]
+    },
+    {
+        "appid": 550,
+        "name": "Left 4 Dead 2",
+        "genres": ["Zombie", "Co-op"]
+    },
+    {
+        "appid": 550900,
+        "name": "Metaphor: ReFantazio",
+        "genres": ["JRPG", "Turn-Based"]
+    },
+    {
+        "appid": 242760,
+        "name": "The Forest",
+        "genres": ["Survival", "Horror"]
+    },
+    {
+        "appid": 1326470,
+        "name": "Sons Of The Forest",
+        "genres": ["Survival", "Horror"]
+    },
+    {
+        "appid": 524660,
+        "name": "RutonyChat",
+        "genres": ["Streaming", "Utility"]
+    },
+    {
+        "appid": 976730,
+        "name": "Halo: The Master Chief Collection",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 1240440,
+        "name": "Halo Infinite",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 205100,
+        "name": "Dishonored",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 403640,
+        "name": "Dishonored 2",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 219150,
+        "name": "Hotline Miami",
+        "genres": ["Action", "Indie"]
+    },
+    {
+        "appid": 274170,
+        "name": "Hotline Miami 2: Wrong Number",
+        "genres": ["Action", "Indie"]
+    },
+    {
+        "appid": 400,
+        "name": "Portal",
+        "genres": ["Puzzle", "Sci-Fi"]
+    },
+    {
+        "appid": 319630,
+        "name": "Life is Strange",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 532210,
+        "name": "Life is Strange 2",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 498240,
+        "name": "Catherine Classic",
+        "genres": ["Puzzle", "Adventure"]
+    },
+    {
+        "appid": 1237970,
+        "name": "Titanfall 2",
+        "genres": ["FPS", "Sci-Fi"]
+    },
+    {
+        "appid": 1158310,
+        "name": "Crusader Kings III",
+        "genres": ["Grand Strategy", "Simulation"]
+    },
+    {
+        "appid": 601510,
+        "name": "Yu-Gi-Oh! Master Duel",
+        "genres": ["Card Game", "Strategy"]
+    },
+    {
+        "appid": 221100,
+        "name": "DayZ",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 588650,
+        "name": "Dead Cells",
+        "genres": ["Roguelike", "Metroidvania"]
+    },
+    {
+        "appid": 204360,
+        "name": "Castle Crashers",
+        "genres": ["Beat 'em up", "Co-op"]
+    },
+    {
+        "appid": 218230,
+        "name": "PlanetSide 2",
+        "genres": ["MMO", "FPS"]
+    },
+    {
+        "appid": 268910,
+        "name": "Cuphead",
+        "genres": ["Platformer", "Action"]
+    },
+    {
+        "appid": 311210,
+        "name": "Call of Duty: Black Ops III",
+        "genres": ["FPS", "Action"]
+    },
+    {
+        "appid": 582500,
+        "name": "We Were Here",
+        "genres": ["Puzzle", "Co-op"]
+    },
+    {
+        "appid": 438100,
+        "name": "VRChat",
+        "genres": ["Social", "VR"]
+    },
+    {
+        "appid": 204100,
+        "name": "Max Payne 3",
+        "genres": ["Shooter", "Action"]
+    },
+    {
+        "appid": 223470,
+        "name": "POSTAL 2",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 45760,
+        "name": "Ultra Street Fighter IV",
+        "genres": ["Fighting", "Arcade"]
+    },
+    {
+        "appid": 893740,
+        "name": "Splitgate",
+        "genres": ["FPS", "Sci-Fi"]
+    },
+    {
+        "appid": 289650,
+        "name": "Assassin's Creed Unity",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 368500,
+        "name": "Assassin's Creed Syndicate",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 460920,
+        "name": "NieR Replicant ver.1.22474487139...",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 638970,
+        "name": "Yakuza 0",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 927380,
+        "name": "Yakuza Kiwami 2",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 1235140,
+        "name": "Yakuza: Like a Dragon",
+        "genres": ["JRPG", "Turn-Based"]
+    },
+    {
+        "appid": 1158850,
+        "name": "Persona 5 Royal",
+        "genres": ["JRPG", "Turn-Based"]
+    },
+    {
+        "appid": 1113000,
+        "name": "Persona 4 Golden",
+        "genres": ["JRPG", "Visual Novel"]
+    },
+    {
+        "appid": 391540,
+        "name": "Undertale",
+        "genres": ["Indie", "RPG"]
+    },
+    {
+        "appid": 3915400,
+        "name": "Deltarune",
+        "genres": ["Indie", "RPG"]
+    },
+    {
+        "appid": 6011500,
+        "name": "HITMAN World of Assassination",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 863550,
+        "name": "HITMAN 2",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 1659040,
+        "name": "HITMAN 3",
+        "genres": ["Stealth", "Action"]
+    },
+    {
+        "appid": 752590,
+        "name": "A Plague Tale: Innocence",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 1182900,
+        "name": "A Plague Tale: Requiem",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 225540,
+        "name": "Just Cause 3",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 517630,
+        "name": "Just Cause 4",
+        "genres": ["Action", "Open World"]
+    },
+    {
+        "appid": 238460,
+        "name": "BattleBlock Theater",
+        "genres": ["Platformer", "Co-op"]
+    },
+    {
+        "appid": 480490,
+        "name": "Prey",
+        "genres": ["Sci-Fi", "Action"]
+    },
+    {
+        "appid": 2689100,
+        "name": "Hi-Fi RUSH",
+        "genres": ["Rhythm", "Action"]
+    },
+    {
+        "appid": 1811260,
+        "name": "Ratchet & Clank: Rift Apart",
+        "genres": ["Action", "Adventure"]
+    },
+    {
+        "appid": 1817070,
+        "name": "UNCHARTED: Legacy of Thieves Collection",
+        "genres": ["Adventure", "Action"]
+    },
+    {
+        "appid": 553420,
+        "name": "TUNIC",
+        "genres": ["Adventure", "Action"]
+    },
+    {
+        "appid": 960990,
+        "name": "Beyond Two Souls",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 1222140,
+        "name": "Heavy Rain",
+        "genres": ["Adventure", "Story Rich"]
+    },
+    {
+        "appid": 9609900,
+        "name": "Frostpunk",
+        "genres": ["City Builder", "Strategy"]
+    },
+    {
+        "appid": 323190,
+        "name": "Frostpunk",
+        "genres": ["City Builder", "Survival"]
+    },
+    {
+        "appid": 466560,
+        "name": "Northgard",
+        "genres": ["Strategy", "RTS"]
+    },
+    {
+        "appid": 594570,
+        "name": "Total War: WARHAMMER II",
+        "genres": ["Strategy", "RTS"]
+    },
+    {
+        "appid": 1142710,
+        "name": "Total War: WARHAMMER III",
+        "genres": ["Strategy", "RTS"]
+    },
+    {
+        "appid": 377160,
+        "name": "Fallout 4",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 22380,
+        "name": "Fallout: New Vegas",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 38400,
+        "name": "Fallout 2",
+        "genres": ["RPG", "Post-Apocalyptic"]
+    },
+    {
+        "appid": 22370,
+        "name": "Fallout 3",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 1151340,
+        "name": "Monster Hunter Rise",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 1144200,
+        "name": "Ready or Not",
+        "genres": ["Tactical", "FPS"]
+    },
+    {
+        "appid": 553420,
+        "name": "Return of the Obra Dinn",
+        "genres": ["Puzzle", "Mystery"]
+    },
+    {
+        "appid": 312520,
+        "name": "Rain World",
+        "genres": ["Survival", "Platformer"]
+    },
+    {
+        "appid": 1222670,
+        "name": "The Sims 4",
+        "genres": ["Life Sim", "Simulation"]
+    },
+    {
+        "appid": 2073850,
+        "name": "THE FINALS",
+        "genres": ["FPS", "Multiplayer"]
+    },
+    {
+        "appid": 1818450,
+        "name": "Dragon's Dogma 2",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 534380,
+        "name": "Star Wars Battlefront II",
+        "genres": ["FPS", "Sci-Fi"]
+    },
+    {
+        "appid": 739630,
+        "name": "Phasmophobia",
+        "genres": ["Horror", "Co-op"]
+    },
+    {
+        "appid": 990080,
+        "name": "Hogwarts Legacy",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 960170,
+        "name": "DJMAX RESPECT V",
+        "genres": ["Rhythm", "Music"]
+    },
+    {
+        "appid": 1675200,
+        "name": "NBA 2K25",
+        "genres": ["Sports", "Basketball"]
+    },
+    {
+        "appid": 620980,
+        "name": "Monster Hunter Wilds",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 2139460,
+        "name": "Once Human",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 1449850,
+        "name": "Yu-Gi-Oh! MASTER DUEL",
+        "genres": ["Card Game", "Strategy"]
+    },
+    {
+        "appid": 400750,
+        "name": "Call to Arms",
+        "genres": ["RTS", "Strategy"]
+    },
+    {
+        "appid": 730310,
+        "name": "Soulcalibur VI",
+        "genres": ["Fighting", "Action"]
+    },
+    {
+        "appid": 1248130,
+        "name": "Farming Simulator 22",
+        "genres": ["Simulation", "Farming"]
+    },
+    {
+        "appid": 2363900,
+        "name": "Microsoft Flight Simulator 2024",
+        "genres": ["Flight", "Simulation"]
+    },
+    {
+        "appid": 107410,
+        "name": "Arma 3",
+        "genres": ["Military", "Simulation"]
+    },
+    {
+        "appid": 824270,
+        "name": "Kena: Bridge of Spirits",
+        "genres": ["Adventure", "Action"]
+    },
+    {
+        "appid": 230410,
+        "name": "Warframe",
+        "genres": ["Action", "MMO"]
+    },
+    {
+        "appid": 238960,
+        "name": "Path of Exile",
+        "genres": ["Action RPG", "Free to Play"]
+    },
+    {
+        "appid": 108600,
+        "name": "Project Zomboid",
+        "genres": ["Zombie", "Survival"]
+    },
+    {
+        "appid": 1100600,
+        "name": "Football Manager 2024",
+        "genres": ["Sports", "Simulation"]
+    },
+    {
+        "appid": 49520,
+        "name": "Torchlight II",
+        "genres": ["Action RPG", "Dungeon Crawler"]
+    },
+    {
+        "appid": 632470,
+        "name": "Disco Elysium",
+        "genres": ["RPG", "Detective"]
+    },
+    {
+        "appid": 1150690,
+        "name": "OMORI",
+        "genres": ["RPG", "Psychological Horror"]
+    },
+    {
+        "appid": 504370,
+        "name": "Battlerite",
+        "genres": ["Arena", "Action"]
+    },
+    {
+        "appid": 524220,
+        "name": "NieR:Automata",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 632360,
+        "name": "Risk of Rain 2",
+        "genres": ["Roguelike", "Co-op"]
+    },
+    {
+        "appid": 739630,
+        "name": "Phasmophobia",
+        "genres": ["Horror", "Co-op"]
+    },
+    {
+        "appid": 304050,
+        "name": "Trove",
+        "genres": ["MMORPG", "Sandbox"]
+    },
+    {
+        "appid": 394510,
+        "name": "HELLDIVERS",
+        "genres": ["Co-op", "Action"]
+    },
+    {
+        "appid": 312670,
+        "name": "Stranded Deep",
+        "genres": ["Survival", "Open World"]
+    },
+    {
+        "appid": 552520,
+        "name": "Far Cry 5",
+        "genres": ["FPS", "Open World"]
+    },
+    {
+        "appid": 298110,
+        "name": "Far Cry 4",
+        "genres": ["FPS", "Open World"]
+    },
+    {
+        "appid": 2208920,
+        "name": "Assassin's Creed Mirage",
+        "genres": ["Action", "Stealth"]
+    },
+    {
+        "appid": 812140,
+        "name": "Assassin's Creed Odyssey",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 582160,
+        "name": "Assassin's Creed Origins",
+        "genres": ["RPG", "Open World"]
+    },
+    {
+        "appid": 220200,
+        "name": "Kerbal Space Program",
+        "genres": ["Simulation", "Space"]
+    },
+    {
+        "appid": 518790,
+        "name": "theHunter: Call of the Wild",
+        "genres": ["Hunting", "Simulation"]
+    },
+    {
+        "appid": 739650,
+        "name": "GTFO",
+        "genres": ["Horror", "Co-op"]
+    },
+    {
+        "appid": 544730,
+        "name": "Crying Suns",
+        "genres": ["Strategy", "Sci-Fi"]
+    },
+    {
+        "appid": 239030,
+        "name": "Papers, Please",
+        "genres": ["Simulation", "Indie"]
+    },
+    {
+        "appid": 2304100,
+        "name": "Deep Rock Galactic: Survivor",
+        "genres": ["Roguelike", "Action"]
+    },
+    {
+        "appid": 548430,
+        "name": "Deep Rock Galactic",
+        "genres": ["Co-op", "FPS"]
+    },
+    {
+        "appid": 582010,
+        "name": "Monster Hunter: World",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 236430,
+        "name": "DARK SOULS II",
+        "genres": ["RPG", "Action"]
+    },
+    {
+        "appid": 1244460,
+        "name": "Jurassic World Evolution 2",
+        "genres": ["Simulation", "Management"]
+    },
+    {
+        "appid": 5187900,
+        "name": "Planet Zoo",
+        "genres": ["Simulation", "Management"]
+    },
+    {
+        "appid": 703080,
+        "name": "Planet Zoo",
+        "genres": ["Simulation", "Management"]
+    },
+    {
+        "appid": 383150,
+        "name": "Dead Island Definitive Edition",
+        "genres": ["Zombie", "Action"]
+    },
+    {
+        "appid": 934700,
+        "name": "Dead Island 2",
+        "genres": ["Zombie", "Action"]
+    },
+    {
+        "appid": 42700,
+        "name": "Call of Juarez: Gunslinger",
+        "genres": ["FPS", "Western"]
+    },
+    {
+        "appid": 1238840,
+        "name": "Battlefield 1",
+        "genres": ["FPS", "War"]
+    },
+    {
+        "appid": 739630,
+        "name": "House Flipper",
+        "genres": ["Simulation", "Building"]
+    },
+    {
+        "appid": 613100,
+        "name": "House Flipper",
+        "genres": ["Simulation", "Building"]
+    },
+    {
+        "appid": 48000,
+        "name": "LIMBO",
+        "genres": ["Puzzle", "Platformer"]
+    },
+    {
+        "appid": 698670,
+        "name": "Scorn",
+        "genres": ["Horror", "Adventure"]
+    },
+    {
+        "appid": 367500,
+        "name": "Dragon Ball Xenoverse",
+        "genres": ["Fighting", "Action"]
+    },
+    {
+        "appid": 454650,
+        "name": "DRAGON BALL XENOVERSE 2",
+        "genres": ["Fighting", "Action"]
+    },
+    {
+        "appid": 851850,
+        "name": "DRAGON BALL Z: KAKAROT",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 1250410,
+        "name": "Microsoft Flight Simulator",
+        "genres": ["Flight", "Simulation"]
+    },
+    {
+        "appid": 960090,
+        "name": "Anno 1800",
+        "genres": ["City Builder", "Strategy"]
+    },
+    {
+        "appid": 916440,
+        "name": "Anno 1800",
+        "genres": ["City Builder", "Strategy"]
+    },
+    {
+        "appid": 774361,
+        "name": "Blasphemous",
+        "genres": ["Metroidvania", "Action"]
+    },
+    {
+        "appid": 774171,
+        "name": "Muse Dash",
+        "genres": ["Rhythm", "Anime"]
+    },
+    {
+        "appid": 1794680,
+        "name": "Vampire Survivors",
+        "genres": ["Roguelike", "Bullet Hell"]
+    },
+    {
+        "appid": 1328670,
+        "name": "Mass Effect Legendary Edition",
+        "genres": ["RPG", "Sci-Fi"]
+    },
+    {
+        "appid": 2364300,
+        "name": "Dragon Age: The Veilguard",
+        "genres": ["RPG", "Fantasy"]
+    },
+    {
+        "appid": 47890,
+        "name": "Dragon Age: Origins - Ultimate Edition",
+        "genres": ["RPG", "Fantasy"]
+    },
+    {
+        "appid": 225840,
+        "name": "Sven Co-op",
+        "genres": ["Co-op", "FPS"]
+    },
+    {
+        "appid": 2390300,
+        "name": "Balatro",
+        "genres": ["Card Game", "Roguelike"]
+    },
+    {
+        "appid": 2379780,
+        "name": "Balatro",
+        "genres": ["Card Game", "Roguelike"]
+    },
+    {
+        "appid": 427520,
+        "name": "Factorio",
+        "genres": ["Automation", "Strategy"]
+    },
+    {
+        "appid": 1940340,
+        "name": "Dark and Darker",
+        "genres": ["Dungeon Crawler", "PvPvE"]
+    },
+    {
+        "appid": 2140330,
+        "name": "Lethal Company",
+        "genres": ["Horror", "Co-op"]
+    },
+    {
+        "appid": 5534200,
+        "name": "Black Myth: Wukong",
+        "genres": ["Action", "Souls-like"]
+    },
+    {
+        "appid": 2358720,
+        "name": "Black Myth: Wukong",
+        "genres": ["Action", "Souls-like"]
+    },
+    {
+        "appid": 1627720,
+        "name": "Lords of the Fallen",
+        "genres": ["Action", "RPG"]
+    },
+    {
+        "appid": 1895880,
+        "name": "Final Fantasy VII Rebirth",
+        "genres": ["JRPG", "Action"]
+    },
+    {
+        "appid": 1462040,
+        "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+        "genres": ["JRPG", "Action"]
+    },
+    {
+        "appid": 2138610,
+        "name": "The Talos Principle 2",
+        "genres": ["Puzzle", "Philosophical"]
+    },
+    {
+        "appid": 286690,
+        "name": "Metro 2033 Redux",
+        "genres": ["FPS", "Post-Apocalyptic"]
+    },
+    {
+        "appid": 412020,
+        "name": "Metro Exodus",
+        "genres": ["FPS", "Open World"]
     }
 ]
