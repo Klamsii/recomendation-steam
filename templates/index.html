@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam Game Recommender</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #171a21, #1b2838);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #66c0f4;
+        }
+
+        .hero p {
+            color: #c7d5e0;
+            font-size: 18px;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .search-form input {
+            width: 420px;
+            max-width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 16px 28px;
+            border: none;
+            border-radius: 10px;
+            background: #66c0f4;
+            color: #171a21;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-form button:hover {
+            background: #8ed6ff;
+            transform: translateY(-2px);
+        }
+
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 80, 80, 0.15);
+            border: 1px solid rgba(255, 80, 80, 0.5);
+            border-radius: 10px;
+            color: #ffb3b3;
+        }
+
+        .profile-card {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+        }
+
+        .profile-info h2 {
+            margin: 0 0 10px;
+            color: #66c0f4;
+            font-size: 32px;
+        }
+
+        .profile-info p {
+            margin: 6px 0;
+            color: #c7d5e0;
+        }
+
+        .section-title {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #66c0f4;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .controls select {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .game-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .game-content {
+            padding: 18px;
+        }
+
+        .game-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #66c0f4;
+            margin-bottom: 12px;
+        }
+
+        .game-content p {
+            margin: 6px 0;
+            color: #c7d5e0;
+        }
+
+        .recommendations {
+            margin-top: 70px;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h2 {
+                font-size: 26px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="hero">
+        <h1>🎮 Steam Game Recommender</h1>
+        <p>Analyze your Steam profile and discover new games you'll love.</p>
+
+        <form method="POST" class="search-form">
+            <input
+                type="text"
+                name="steam_id"
+                placeholder="Enter your Steam ID (64-bit)"
+                required
+            />
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+
+    {% if profile %}
+
+    <div class="profile-card">
+        <img src="{{ profile.avatar }}" alt="{{ profile.name }}">
+
+        <div class="profile-info">
+            <h2>{{ profile.name }}</h2>
+            <p><strong>Level:</strong> {{ profile.level }}</p>
+            <p><strong>Country:</strong> {{ profile.country }}</p>
+            <p><strong>Last Online:</strong> {{ profile.last_online }}</p>
+            <p><strong>Total Games:</strong> {{ games|length }}</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">📚 Your Steam Library</h2>
+
+    <div class="controls">
+        <select id="sortSelect" onchange="sortGames()">
+            <option value="name">Sort by Name (A-Z)</option>
+            <option value="hours_desc">Sort by Hours (High to Low)</option>
+            <option value="hours_asc">Sort by Hours (Low to High)</option>
+        </select>
+    </div>
+
+    <div class="games-grid" id="gamesGrid">
+        {% for game in games %}
+        <div
+            class="game-card"
+            data-name="{{ game.name|lower }}"
+            data-hours="{{ game.hours }}"
+        >
+            <img
+                src="https://cdn.cloudflare.steamstatic.com/steam/apps/{{ game.appid }}/header.jpg"
+                alt="{{ game.name }}"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="game-content">
+                <div class="game-title">{{ game.name }}</div>
+                <p><strong>Total Hours:</strong> {{ game.hours }}</p>
+                <p><strong>Last 2 Weeks:</strong> {{ game.recent_hours }}</p>
+                <p><strong>Last Played:</strong> {{ game.last_played }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    
+    <div class="recommendations">
+        <h2 class="section-title">🤖 Recommended Games</h2>
+
+        <div class="games-grid">
+            {% for game in recommendations %}
+            <div class="game-card">
+                <img
+                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/{{ game.appid }}/header.jpg"
+                    alt="{{ game.name }}"
+                    onerror="this.style.display='none'"
+                >
+
+                <div class="game-content">
+                    <div class="game-title">{{ game.name }}</div>
+
+                    {% if game.reason %}
+                    <p>{{ game.reason }}</p>
+                    {% else %}
+                    <p>Recommended based on your favorite genres and playtime.</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endif %}
+
+
+    <!-- Блок ошибок (например, если профиль закрыт) -->
+    {% if error %}
+    <div class="error">
+        <h3>⚠️ Unable to Access Your Steam Profile</h3>
+        <p>{{ error }}</p>
+
+        <p>
+            To use this website, your Steam profile and game details must be public.
+        </p>
+
+        <p>
+            Open your privacy settings here:
+            <br><br>
+            <a
+                href="https://steamcommunity.com/my/edit/settings"
+                target="_blank"
+                style="color: #66c0f4; font-weight: bold;"
+            >
+                🔓 Open Steam Privacy Settings
+            </a>
+        </p>
+
+        <p>
+            Set the following options to <strong>Public</strong>:
+        </p>
+
+        <ul style="text-align: left; max-width: 400px; margin: 20px auto;">
+            <li>My Profile</li>
+            <li>Game Details</li>
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+function sortGames() {
+    const grid = document.getElementById('gamesGrid');
+    const cards = Array.from(grid.children);
+    const sortType = document.getElementById('sortSelect').value;
+
+    cards.sort((a, b) => {
+        const nameA = a.dataset.name;
+        const nameB = b.dataset.name;
+        const hoursA = parseFloat(a.dataset.hours);
+        const hoursB = parseFloat(b.dataset.hours);
+
+        if (sortType === 'name') {
+            return nameA.localeCompare(nameB);
+        }
+
+        if (sortType === 'hours_desc') {
+            return hoursB - hoursA;
+        }
+
+        if (sortType === 'hours_asc') {
+            return hoursA - hoursB;
+        }
+
+        return 0;
+    });
+
+    cards.forEach(card => grid.appendChild(card));
+}
+</script>
+</body>
+</html>
