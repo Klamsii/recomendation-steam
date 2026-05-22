@@ -1,8 +1,10 @@
 import os
 import json
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify
-import requests
+from flask import Flask, render_template, request, jsonify, send_file
+from openpyxl import Workbook
+import io
+import requests 
 from datetime import datetime
 
 load_dotenv()
@@ -390,6 +392,34 @@ def index():
         error=error
     )
 
+@app.route("/export")
+def export_excel():
+    with open("games.json", "r", encoding="utf-8") as f:
+        recommendations = json.load(f)
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Recommended Games"
+
+    ws.append(["App ID", "Game Name", "Genres"])
+
+    for game in recommendations:
+        ws.append([
+            game.get("appid"),
+            game.get("name"),
+            ", ".join(game.get("genres", []))
+        ])
+
+    excel_file = io.BytesIO()
+    wb.save(excel_file)
+    excel_file.seek(0)
+
+    return send_file(
+        excel_file,
+        download_name="recommended_games.xlsx",
+        as_attachment=True,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
