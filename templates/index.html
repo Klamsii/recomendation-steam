@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Стим Рекомендаций для Скиро</title>
+    <title>Steam Game Recommender</title>
 
     <style>
     :root {
@@ -496,7 +496,31 @@
         </div>
         {% endfor %}
     </div>
+    <div style="margin: 30px 0;">
+        <a
+            href="/export"
+            style="
+                display:inline-block;
+                padding:14px 24px;
+                border-radius:12px;
+                text-decoration:none;
+                font-weight:bold;
+                background: linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #a855f7
+                );
+                color:white;
+                box-shadow:
+                    0 8px 20px rgba(124,58,237,0.25);
+                transition:0.3s;
+            "
+        >
+            📥 Export Recommendations to Excel
+        </a>
+    </div>
 
+<h2 class="section-title">Recommended Games</h2>
     
     <div class="recommendations">
         <h2 class="section-title">Recommended Games</h2>
